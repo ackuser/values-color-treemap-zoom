@@ -16,3 +16,11 @@ https://icomoon.io/app/#/select
 http://www.w3schools.com/browsers/browsers_stats.asp
 
 https://en.wikipedia.org/wiki/Usage_share_of_web_browsers
+
+http://d3plus.org/workshops/11_19_2013/tree_map/
+
+https://groups.google.com/forum/#!topic/d3plus/EdDObbtMkFs
+
+http://jsfiddle.net/Qq7pF/3/
+
+http://www.w3counter.com/globalstats.php

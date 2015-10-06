@@ -8,17 +8,24 @@
 
 <script>
   var sample_data = [
-    {"value": 70, "name": "Firefox", "image": "http://localhost:8080/png/firefox.png"},
-    {"value": 100, "name": "Chrome", "image": "http://localhost:8080/png/chrome.png"},
-    {"value": 15, "name": "Others", "image": "http://localhost:8080/png/share2.png"},
-    {"value": 50, "name": "Safari", "image": "http://localhost:8080/png/safari.png"},
-    {"value": 5, "name": "IE", "image": "http://localhost:8080/png/IE.png"},
+    {"value": 70, "name": "Firefox", "group": "2014","group1": "2015","image": "http://localhost:8080/png/firefox.png"},
+    {"value": 100, "name": "Chrome", "group": "2014","group1": "2015","image": "http://localhost:8080/png/chrome.png"},
+    {"value": 15, "name": "Others", "group": "2014","group1": "2015","image": "http://localhost:8080/png/share2.png"},
+    {"value": 50, "name": "Safari", "group": "2014","group1": "2015","image": "http://localhost:8080/png/safari.png"},
+    {"value": 5, "name": "IE", "group": "2014","group1": "2015","image": "http://localhost:8080/png/IE.png"},
+    {"value": 70, "name": "Firefox", "group": "2015","group1": "2015","image": "http://localhost:8080/png/firefox.png"},
+    {"value": 100, "name": "Chrome", "group": "2015","group1": "2015","image": "http://localhost:8080/png/chrome.png"},
+    {"value": 15, "name": "Others", "group": "2015","group1": "2015","image": "http://localhost:8080/png/share2.png"},
+    {"value": 50, "name": "Safari", "group": "2015","group1": "2015","image": "http://localhost:8080/png/safari.png"},
+    {"value": 5, "name": "IE", "group": "2015","group1": "Enero","image": "http://localhost:8080/png/IE.png"},
+    {"value": 2, "name": "IE", "group": "2015","group1": "Febrero","image": "http://localhost:8080/png/IE.png"},
+    {"value": 5, "name": "IE", "group": "2015","group1": "Marzo","image": "http://localhost:8080/png/IE.png"},
   ]
   var visualization = d3plus.viz()
     .container("#viz")
     .data(sample_data)
     .type("tree_map")
-    .id("name")
+    .id(["group","name","group1"])
     .icon({
     "style": "knockout",
     "value": "image"
@@ -33,4 +40,3 @@
     })
     .draw()
 </script>
-view raw
