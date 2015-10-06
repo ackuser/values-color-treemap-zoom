@@ -2,22 +2,33 @@
 <meta charset="utf-8">
 <script src="http://www.d3plus.org/js/d3.js"></script>
 <script src="http://www.d3plus.org/js/d3plus.js"></script>
-<div id="viz"></div>
+<div id="exports"></div>
 <script>
 var sample_data = [
-{"value": 100, "name": "alpha", "growth": .9, "group": "group 1"},
-{"value": 70, "name": "beta", "growth": .4, "group": "group 2"},
-{"value": 40, "name": "gamma", "growth": -.3, "group": "group 2"},
-{"value": 15, "name": "delta", "growth": .65, "group": "group 2"},
-{"value": 5, "name": "epsilon", "growth": .7, "group": "group 1"},
-{"value": 1, "name": "zeta", "growth": .2, "group": "group 1"},
-]
+{"value": 100, "name": "alpha", "growth": .9, "group": "group 1", "image": "camion.svg"},
+{"value": 70, "name": "beta", "growth": .4, "group": "group 2","image": "camion.svg"},
+{"value": 40, "name": "gamma", "growth": -.3, "group": "group 2","image": "camion.svg"},
+{"value": 15, "name": "delta", "growth": .65, "group": "group 2","image": "camion.svg"},
+{"value": 5, "name": "epsilon", "growth": .7, "group": "group 1","image": "camion.svg"},
+{"value": 1, "name": "zeta", "growth": .2, "group": "group 1","image": "camion.svg"}
+];
 var visualization = d3plus.viz()
-.container("#viz")
+.container("#exports")
 .data(sample_data)
 .type("tree_map")
-.id(["group","name"])
+.icon({
+"style": "knockout",
+"value": "image"
+})
+.legend({
+    "order": {
+      "sort": "desc",
+      "value": "size"
+    }
+  })
 .color("growth")
-.size("value")
+.id(["group","name"])
+//.depth(1)
+.size("growth")
 .draw()
 </script>
