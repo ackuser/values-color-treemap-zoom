@@ -12,10 +12,60 @@ var viz = d3plus.viz();
 
 // here we get all the data we need from the server, first the raw data, then
 // each of the attribute files
-var songs = [
+var browser = [
   {
-    "song_id": "SOBWVGX12AB017BD87",
-    "song_title": "Like Dylan In The Movies",
+    "song_id": "1",
+    "song_title": "Firefox",
+    "artist_id": "2014",
+    "album_id": 1,
+    "duration": 250.69669,
+    "hotttnesss": null,
+    "loudness": -10.504,
+    "year": "1996"
+  },
+  {
+    "song_id": "2",
+    "song_title": "Chrome",
+    "artist_id": "2014",
+    "album_id": 1,
+    "duration": 250.69669,
+    "hotttnesss": null,
+    "loudness": -10.504,
+    "year": "1996"
+  },
+  {
+    "song_id": "3",
+    "song_title": "Safari",
+    "artist_id": "2014",
+    "album_id": 1,
+    "duration": 250.69669,
+    "hotttnesss": null,
+    "loudness": -10.504,
+    "year": "1996"
+  },
+  {
+    "song_id": "4",
+    "song_title": "Opera",
+    "artist_id": "2014",
+    "album_id": 1,
+    "duration": 250.69669,
+    "hotttnesss": null,
+    "loudness": -10.504,
+    "year": "1996"
+  },
+  {
+    "song_id": "5",
+    "song_title": "IE",
+    "artist_id": "2014",
+    "album_id": 1,
+    "duration": 250.69669,
+    "hotttnesss": null,
+    "loudness": -10.504,
+    "year": "1996"
+  },
+  {
+    "song_id": "6",
+    "song_title": "Others",
     "artist_id": "2014",
     "album_id": 1,
     "duration": 250.69669,
@@ -90,17 +140,17 @@ var albums = [
 ];
 
       // set up attributes look up dictionary
-      var attrs = {"artist_id": artists, "album_id": albums, "song_id": songs};
+      var attrs = {"artist_id": artists, "album_id": albums, "song_id": browser};
 
       // set attributes on our viz object
       viz
         .container("#viz")
-        .data(songs)
+        .data(browser)
         .type("tree_map")
         .attrs(attrs)
         .size("duration")
         .id(["artist_id","album_id","song_id"])
-        .text({"artist_id":"names","album_id":"name","song_id":["song_title","song_id","loudness"]})
+        .text({"artist_id":"names","album_id":"name","song_id":["song_title","song_id"]})
         .tooltip({"artist_id":["names"],"album_id":["name"],"song_id":["song_title"]})
         .depth(0)
         //.year(1996)
