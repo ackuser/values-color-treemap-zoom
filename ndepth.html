@@ -19,7 +19,7 @@ var stats = [
     "genre_id": "Browser",
     "month_id": "July",
     "usage": 38.5,
-      "year": "2014",
+    "year": "2014",
     "image": "http://localhost:8080/png/firefox.png"
   },
   {
@@ -256,26 +256,48 @@ var months = [
 ];
 
 
-      // set up attributes look up dictionary
-      var attrs = {"genre_id": genres, "month_id": months, "stat_id": stats};
+// set up attributes look up dictionary
+var attrs = {"genre_id": genres, "month_id": months, "stat_id": stats};
 
-      // set attributes on our viz object
-      viz
-        .container("#viz")
-        .data(stats)
-        .type("tree_map")
-        .attrs(attrs)
-        .size("usage")
-        .id(["genre_id","month_id","stat_id"])
-        .text({"genre_id":"names","month_id":"name","stat_id":["stat_title","stat_id"]})
-        .tooltip({"genre_id":["names"],"month_id":["name"],"stat_id":["stat_title"]})
-        .depth(0)
-        .icon({
-        "style": "knockout",
-        "value": "image"
-        })
-        //.year(1996)
-        //.year_var("year")
-        .draw()
+// set attributes on our viz object
+viz
+.container("#viz")
+.data(stats)
+.type("tree_map")
+.attrs(attrs)
+.id(["genre_id","month_id","stat_id"])
+.text({"genre_id":"names","month_id":"name","stat_id":["stat_title","stat_id"]})
+.tooltip({"genre_id":["names"],"month_id":["name"],"stat_id":["stat_title"]})
+.depth(0)
+.icon({
+  "style": "knockout",
+  "value": "image"
+})
+.size("usage")
+.legend({
+    "order": {
+      "sort": "desc",
+      "value": "usage"
+    }
+  })
+  .ui([
+   {
+     "method" : function(value){
+       alert(value);
+     },
+     "label": "Alert",
+     "type": "button",
+     "value"  : ["Hello"]
+   },
+   {
+     "method" : "color",
+     "type": "drop",
+     "value"  : [{"Random": "name"}, {"Weight Value": "usage"}]
+   }
+ ])
+//.value("usage")
+//.year(1996)
+//.year_var("year")
+.draw()
 
 </script>
