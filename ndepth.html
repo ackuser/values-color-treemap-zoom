@@ -12,147 +12,268 @@ var viz = d3plus.viz();
 
 // here we get all the data we need from the server, first the raw data, then
 // each of the attribute files
-var browser = [
+var stats = [
   {
-    "song_id": "1",
-    "song_title": "Firefox",
-    "artist_id": "2014",
-    "album_id": 1,
-    "duration": 38.5,
-    "hotttnesss": null,
-    "loudness": -10.504,
-    "year": "1996"
+    "stat_id": "1",
+    "stat_title": "Firefox",
+    "genre_id": "Browser",
+    "month_id": "July",
+    "usage": 38.5,
+    "year": "1996",
+    "image": "http://localhost:8080/png/firefox.png"
   },
   {
-    "song_id": "2",
-    "song_title": "Chrome",
-    "artist_id": "2014",
-    "album_id": 1,
-    "duration": 15.2,
-    "hotttnesss": null,
-    "loudness": -10.504,
-    "year": "1996"
+    "stat_id": "2",
+    "stat_title": "Chrome",
+    "genre_id": "Browser",
+    "month_id": "July",
+    "usage": 15.2,
+    "year": "1996",
+    "image": "http://localhost:8080/png/chrome.png"
   },
   {
-    "song_id": "3",
-    "song_title": "Safari",
-    "artist_id": "2014",
-    "album_id": 1,
-    "duration": 15.4,
-    "hotttnesss": null,
-    "loudness": -10.504,
-    "year": "1996"
+    "stat_id": "3",
+    "stat_title": "Safari",
+    "genre_id": "Browser",
+    "month_id": "July",
+    "usage": 15.4,
+    "year": "1996",
+    "image": "http://localhost:8080/png/safari.png"
   },
   {
-    "song_id": "4",
-    "song_title": "Opera",
-    "artist_id": "2014",
-    "album_id": 1,
-    "duration": 3.1,
-    "hotttnesss": null,
-    "loudness": -10.504,
-    "year": "1996"
+    "stat_id": "4",
+    "stat_title": "Opera",
+    "genre_id": "Browser",
+    "month_id": "July",
+    "usage": 3.1,
+    "year": "1996",
+    "image": "http://localhost:8080/png/opera.png"
   },
   {
-    "song_id": "5",
-    "song_title": "IE",
-    "artist_id": "2014",
-    "album_id": 1,
-    "duration": 21.2,
-    "hotttnesss": null,
-    "loudness": -10.504,
-    "year": "1996"
+    "stat_id": "5",
+    "stat_title": "IE",
+    "genre_id": "Browser",
+    "month_id": "July",
+    "usage": 21.2,
+    "year": "1996",
+    "image": "http://localhost:8080/png/IE.png"
   },
   {
-    "song_id": "6",
-    "song_title": "Others",
-    "artist_id": "2014",
-    "album_id": 1,
-    "duration": 6.6,
-    "hotttnesss": null,
-    "loudness": -10.504,
-    "year": "1996"
+    "stat_id": "6",
+    "stat_title": "Others",
+    "genre_id": "Browser",
+    "month_id": "July",
+    "usage": 6.6,
+    "year": "1996",
+    "image": "http://localhost:8080/png/share.png"
   },
   {
-    "song_id": "SOJHRLU12A6701EB67",
-    "song_title": "One Shine",
-    "artist_id": "2014",
-    "album_id": 2,
-    "duration": 340.40118,
-    "hotttnesss": 0.583401231,
-    "loudness": -10.345,
-    "year": null
+    "stat_id": "7",
+    "stat_title": "Firefox",
+    "genre_id": "Browser",
+    "month_id": "August",
+    "usage": 38.0,
+    "year": "1996",
+    "image": "http://localhost:8080/png/firefox.png"
   },
-    {
-    "song_id": "SOJHRLU12A6701EB56",
-    "song_title": "One Shine 2",
-    "artist_id": "AR8RXRI1187FB4104B",
-    "album_id": 15646,
-    "duration": 340.40118,
-    "hotttnesss": 0.583401231,
-    "loudness": -10.345,
-    "year": null
+  {
+    "stat_id": "8",
+    "stat_title": "Chrome",
+    "genre_id": "2014",
+    "month_id": "August",
+    "usage": 21.1,
+    "year": "1996",
+    "image": "http://localhost:8080/png/chrome.png"
+  },
+  {
+    "stat_id": "9",
+    "stat_title": "Safari",
+    "genre_id": "Browser",
+    "month_id": "August",
+    "usage": 15.5,
+    "year": "1996",
+    "image": "http://localhost:8080/png/safari.png"
+  },
+  {
+    "stat_id": "10",
+    "stat_title": "Opera",
+    "genre_id": "Browser",
+    "month_id": "August",
+    "usage": 15.5,
+    "year": "1996",
+    "image": "http://localhost:8080/png/opera.png"
+  },
+  {
+    "stat_id": "11",
+    "stat_title": "IE",
+    "genre_id": "Browser",
+    "month_id": "August",
+    "usage": 3.2,
+    "year": "1996",
+    "image": "http://localhost:8080/png/IE.png"
+  },
+  {
+    "stat_id": "12",
+    "stat_title": "Others",
+    "genre_id": "Browser",
+    "month_id": "August",
+    "usage": 6.7,
+    "year": "1996",
+    "image": "http://localhost:8080/png/share.png"
+  },
+  {
+    "stat_id": "13",
+    "stat_title": "Windows",
+    "genre_id": "SO",
+    "month_id": "July",
+    "usage": 38.0,
+    "year": "1996",
+    "image": "http://localhost:8080/png/windows.png"
+  },
+  {
+    "stat_id": "14",
+    "stat_title": "iOS",
+    "genre_id": "SO",
+    "month_id": "July",
+    "usage": 21.1,
+    "year": "1996",
+    "image": "http://localhost:8080/png/chrome.png"
+  },
+  {
+    "stat_id": "15",
+    "stat_title": "MacOSx",
+    "genre_id": "SO",
+    "month_id": "July",
+    "usage": 15.5,
+    "year": "1996",
+    "image": "http://localhost:8080/png/finder.png"
+  },
+  {
+    "stat_id": "16",
+    "stat_title": "Android",
+    "genre_id": "SO",
+    "month_id": "July",
+    "usage": 15.5,
+    "year": "1996",
+    "image": "http://localhost:8080/png/android.png"
+  },
+  {
+    "stat_id": "17",
+    "stat_title": "Linux",
+    "genre_id": "SO",
+    "month_id": "July",
+    "usage": 3.2,
+    "year": "1996",
+    "image": "http://localhost:8080/png/linux.png"
+  },
+  {
+    "stat_id": "18",
+    "stat_title": "Others",
+    "genre_id": "SO",
+    "month_id": "July",
+    "usage": 6.7,
+    "year": "1996",
+    "image": "http://localhost:8080/png/share.png"
+  },
+  {
+    "stat_id": "19",
+    "stat_title": "Windows",
+    "genre_id": "SO",
+    "month_id": "August",
+    "usage": 38.0,
+    "year": "1996",
+    "image": "http://localhost:8080/png/windows.png"
+  },
+  {
+    "stat_id": "20",
+    "stat_title": "iOS",
+    "genre_id": "SO",
+    "month_id": "August",
+    "usage": 21.1,
+    "year": "1996",
+    "image": "http://localhost:8080/png/chrome.png"
+  },
+  {
+    "stat_id": "21",
+    "stat_title": "MacOSx",
+    "genre_id": "SO",
+    "month_id": "August",
+    "usage": 15.5,
+    "year": "1996",
+    "image": "http://localhost:8080/png/finder.png"
+  },
+  {
+    "stat_id": "22",
+    "stat_title": "Android",
+    "genre_id": "SO",
+    "month_id": "August",
+    "usage": 15.5,
+    "year": "1996",
+    "image": "http://localhost:8080/png/android.png"
+  },
+  {
+    "stat_id": "23",
+    "stat_title": "Linux",
+    "genre_id": "SO",
+    "month_id": "August",
+    "usage": 3.2,
+    "year": "1996",
+    "image": "http://localhost:8080/png/linux.png"
+  },
+  {
+    "stat_id": "24",
+    "stat_title": "Others",
+    "genre_id": "SO",
+    "month_id": "August",
+    "usage": 6.7,
+    "year": "1996",
+    "image": "http://localhost:8080/png/share.png"
   }
 ];
-var artists = [
+var genres = [
   {
     "count": 3,
-    "artist_id": "2014",
-    "names": "2014"
+    "genre_id": "Browser",
+    "names": "Browser"
   },
   {
     "count": 3,
-    "artist_id": "2015",
-    "names": "2015",
+    "genre_id": "SO",
+    "names": "SO",
   }
 ];
-var albums = [
+var months = [
   {
     "count": 6,
     "name": "July",
-    "album_id": 1
+    "month_id": "July"
   },
   {
     "count": 6,
     "name": "August",
-    "album_id": 2
-  },
-  {
-    "count": 6,
-    "name": "September",
-    "album_id": 3
-  },
-  {
-    "count": 6,
-    "name": "July",
-    "album_id": 4
-  },
-  {
-    "count": 6,
-    "name": "August",
-    "album_id": 5
-  },
-  {
-    "count": 6,
-    "name": "September",
-    "album_id": 6
+    "month_id": "August"
   }
 ];
 
+
       // set up attributes look up dictionary
-      var attrs = {"artist_id": artists, "album_id": albums, "song_id": browser};
+      var attrs = {"genre_id": genres, "month_id": months, "stat_id": stats};
 
       // set attributes on our viz object
       viz
         .container("#viz")
-        .data(browser)
+        .data(stats)
         .type("tree_map")
         .attrs(attrs)
-        .size("duration")
-        .id(["artist_id","album_id","song_id"])
-        .text({"artist_id":"names","album_id":"name","song_id":["song_title","song_id"]})
-        .tooltip({"artist_id":["names"],"album_id":["name"],"song_id":["song_title"]})
+        .size("usage")
+        .id(["genre_id","month_id","stat_id"])
+        .text({"genre_id":"names","month_id":"name","stat_id":["stat_title","stat_id"]})
+        .tooltip({"genre_id":["names"],"month_id":["name"],"stat_id":["stat_title"]})
         .depth(0)
+        .icon({
+        "style": "knockout",
+        "value": "image"
+        })
         //.year(1996)
         //.year_var("year")
         .draw()
