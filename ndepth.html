@@ -269,18 +269,35 @@ viz
 .text({"genre_id":"name","month_id":"name","stat_id":["stat_title","stat_id"]})
 .tooltip({"genre_id":["name"],"month_id":["name"],"stat_id":["stat_title"]})
 .depth(0)
-.icon({
-  "style": "knockout",
-  "value": "image"
-})
 .size("usage")
 .legend({"size": 50})
-  .ui([
+.legend({
+"order": {
+"sort": "desc",
+"value": "size"
+}
+})
+/*.color(function(d){
+return d.growth > 0 ? "#008800" : "#880000";
+})
+*/
+//.font({ "family": "Comic Sans" })
+/*.color({
+  "range": [ "blue" , "red" , "yellow" ],
+  "value": "name"
+})*/
+//.depth(1)
+.color("usage")
+.ui([
   {
     "method" : "color",
     "value"  : [ "name" , "usage", "stat_title" ]
   }
- ])
+])
+.icon({
+  "style": "knockout",
+  "value": "image"
+})
 //.value("usage")
 //.year(1996)
 //.year_var("year")
