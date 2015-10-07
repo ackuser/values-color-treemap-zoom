@@ -137,7 +137,7 @@ var stats = [
     "month_id": "July",
     "usage": 10.10,
     "year": "2014",
-    "image": "http://localhost:8080/png/chrome.png"
+    "image": "http://localhost:8080/png/apple.png"
   },
   {
     "stat_id": "15",
@@ -191,7 +191,7 @@ var stats = [
     "month_id": "August",
     "usage": 10.44,
     "year": "2014",
-    "image": "http://localhost:8080/png/chrome.png"
+    "image": "http://localhost:8080/png/apple.png"
   },
   {
     "stat_id": "21",
@@ -274,25 +274,12 @@ viz
   "value": "image"
 })
 .size("usage")
-.legend({
-    "order": {
-      "sort": "desc",
-      "value": "usage"
-    }
-  })
+.legend({"size": 50})
   .ui([
-   {
-     "method" : function(value){
-       alert(value);
-     },
-     "label": "Alert",
-     "type": "button",
-     "value"  : ["Hello"]
-   },
    {
      "method" : "color",
      "type": "drop",
-     "value"  : [{"Random": "name"}, {"Weight Value": "usage"}]
+     "value"  : [{"Random": "stat_title"}, {"Weight Value": "usage"}]
    }
  ])
 //.value("usage")
