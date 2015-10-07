@@ -234,12 +234,12 @@ var genres = [
   {
     "count": 12,
     "genre_id": "Browser",
-    "names": "Browser"
+    "name": "Browser"
   },
   {
     "count": 12,
     "genre_id": "SO",
-    "names": "SO",
+    "name": "SO",
   }
 ];
 var months = [
@@ -266,8 +266,8 @@ viz
 .type("tree_map")
 .attrs(attrs)
 .id(["genre_id","month_id","stat_id"])
-.text({"genre_id":"names","month_id":"name","stat_id":["stat_title","stat_id"]})
-.tooltip({"genre_id":["names"],"month_id":["name"],"stat_id":["stat_title"]})
+.text({"genre_id":"name","month_id":"name","stat_id":["stat_title","stat_id"]})
+.tooltip({"genre_id":["name"],"month_id":["name"],"stat_id":["stat_title"]})
 .depth(0)
 .icon({
   "style": "knockout",
@@ -276,11 +276,10 @@ viz
 .size("usage")
 .legend({"size": 50})
   .ui([
-   {
-     "method" : "color",
-     "type": "drop",
-     "value"  : [{"Random": "stat_title"}, {"Weight Value": "usage"}]
-   }
+  {
+    "method" : "color",
+    "value"  : [ "name" , "usage", "stat_title" ]
+  }
  ])
 //.value("usage")
 //.year(1996)
