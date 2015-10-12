@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="http://www.d3plus.org/js/d3.js"></script>
+<script src="http://www.d3plus.org/js/d3plus.js"></script>
+
+<div id="viz"></div>
+
+<script>
+  var sample_data = [
+    {"name": "Volume", "group": "group 1","value": .9},
+    {"name": "Awareness", "group": "group 1","value": .4},
+    {"name": "Sentiment", "group": "group 1","value": -.3},
+    {"name": "Usage", "group": "group 1","value": -.65},
+    //{"name": "epsilon", "group": "group 2","value": .7},
+    //{"name": "zeta", "group": "group 2","value": .2}
+  ]
+
+  /*var attributes = [
+    {"name": "alpha", "hex": "#CC0000"},
+    {"name": "epsilon", "hex": "#00CC00"}
+  ]*/
+    // sample data array
+    var trade_data = [
+      {"usd": 35667, "product": "Volume", "growth": .9},
+      {"usd": 32443, "product": "Awareness", "growth": .4},
+      {"usd": 454344, "product": "Sentiment", "growth": .7},
+      {"usd": 454554, "product": "Usage", "growth": .1},
+      {"usd": 54454, "product": "Others", "growth": -.9}
+    ]
+    // instantiate d3plus
+    var visualization = d3plus.viz()
+      .container("#viz")
+      .data(trade_data)
+      .type("tree_map")
+      .id("product")
+      .size("usd")
+      .labels({"align": "left", "valign": "top"})
+      .color({
+       "range": [ "#FA58AC" , "gray" , "#819FF7" ],
+       "value": "growth"
+     })
+      .draw()
+
+
+</script>
