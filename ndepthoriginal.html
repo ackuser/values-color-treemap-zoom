@@ -1,0 +1,101 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="http://www.d3plus.org/js/d3.js"></script>
+<script src="http://www.d3plus.org/js/d3plus.js"></script>
+
+<div id="viz"></div>
+<script>
+
+// instantiate our D3plus viz object
+var viz = d3plus.viz();
+
+// here we get all the data we need from the server, firt the raw data, then
+// each of the attribute files
+var songs = [
+  {
+    "song_id": "SOBWVGX12AB017BD87",
+    "song_title": "Like Dylan In The Movies",
+    "artist_id": "AR8BUVM1187FB4D94D",
+    "album_id": 569858,
+    "duration": 250.69669,
+    "hotttnesss": null,
+    "loudness": -10.504,
+    "year": "1996"
+  },
+  {
+    "song_id": "SOJHRLU12A6701EB67",
+    "song_title": "One Shine",
+    "artist_id": "AR8RXRI1187FB4104B",
+    "album_id": 15646,
+    "duration": 340.40118,
+    "hotttnesss": 0.583401231,
+    "loudness": -10.345,
+    "year": null
+  },
+    {
+    "song_id": "SOJHRLU12A6701EB56",
+    "song_title": "One Shine 2",
+    "artist_id": "AR8RXRI1187FB4104B",
+    "album_id": 15646,
+    "duration": 340.40118,
+    "hotttnesss": 0.583401231,
+    "loudness": -10.345,
+    "year": null
+  }
+];
+
+var artists = [
+  {
+    "count": 3,
+    "familiarity": 0.7447347668,
+    "hotttnesss": 0.5650456592,
+    "artist_id": "AR8BUVM1187FB4D94D",
+    "names": "Belle and Sebastian",
+    "lat": 55.864237,
+    "long": -4.251806,
+    "location": "GB"
+  },
+  {
+    "count": 6,
+    "familiarity": 0.8627954137,
+    "hotttnesss": 0.6002824907,
+    "artist_id": "AR8RXRI1187FB4104B",
+    "names": "The Roots",
+    "lat": 39.95227,
+    "long": -75.16237,
+    "location": "US"
+  }
+];
+var albums = [
+  {
+    "count": 2,
+    "name": "The BBC Sessions",
+    "album_id": 569858
+  },
+  {
+    "count": 1,
+    "name": "Illadelph Halflife",
+    "album_id": 15646
+  }
+];
+
+      // set up attributes look up dictionary
+      var attrs = {"artist_id": artists, "album_id": albums, "song_id": songs};
+
+      // set attributes on our viz object
+      viz
+        .container("#viz")
+        .data(songs)
+        .type("tree_map")
+        .attrs(attrs)
+        .size("duration")
+        .id(["artist_id","album_id","song_id"])
+        .text({"artist_id":"names","album_id":"name","song_id":["song_title","song_id","loudness"]})
+        .tooltip({"artist_id":["names"],"album_id":["name"],"song_id":["song_title"]})
+        .depth(0)
+        //.year(1996)
+        //.year_var("year")
+        .draw()
+
+        </script>
